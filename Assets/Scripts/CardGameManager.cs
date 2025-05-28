@@ -24,11 +24,14 @@ public class CardGameManager : MonoBehaviour
 
     [Header("Sprites")]
     [SerializeField] private Sprite[] puzzles;
-    [SerializeField] private Sprite backSprite;
+    [SerializeField] private Sprite[] backSprites;
 
     [Header("Lists")]
     [SerializeField] private List<Sprite> gamePuzzles = new List<Sprite>();
     [SerializeField] private List<Button> btns = new List<Button>();
+
+    private Sprite firstGuestBackSprite;
+    private Sprite secondGuestBackSprite;
 
     private bool firstGuess, secondGuess;
 
@@ -72,6 +75,8 @@ public class CardGameManager : MonoBehaviour
             Button puzzleButton = puzzleObject.GetComponent<Button>();
             puzzleButton.onClick.AddListener(PizkPuzzle);
             btns.Add(puzzleButton);
+
+            puzzleButton.image.sprite = backSprites[i % 2];
         }
     }
 
@@ -92,6 +97,8 @@ public class CardGameManager : MonoBehaviour
 
             firstGuessPuzzle = gamePuzzles[firstGuessIndex].name;
 
+            firstGuestBackSprite = btns[firstGuessIndex].image.sprite;
+
             TurnOverPuzzle(btns[firstGuessIndex].GetComponent<RectTransform>(), btns[firstGuessIndex].image, gamePuzzles[firstGuessIndex]);
         }
         else if(!secondGuess)
@@ -103,6 +110,8 @@ public class CardGameManager : MonoBehaviour
             btns[secondGuessIndex].interactable = false;
 
             secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
+
+            secondGuestBackSprite = btns[secondGuessIndex].image.sprite;
 
             TurnOverPuzzle(btns[secondGuessIndex].GetComponent<RectTransform>(), btns[secondGuessIndex].image, gamePuzzles[secondGuessIndex], () => StartCoroutine(CheckPuzzles()));
         }
@@ -137,8 +146,8 @@ public class CardGameManager : MonoBehaviour
         }
         else
         {
-            TurnOverPuzzle(btns[firstGuessIndex].GetComponent<RectTransform>(), btns[firstGuessIndex].image, backSprite, () => btns[firstGuessIndex].interactable = true);
-            TurnOverPuzzle(btns[secondGuessIndex].GetComponent<RectTransform>(), btns[secondGuessIndex].image, backSprite, () => btns[secondGuessIndex].interactable = true);
+            TurnOverPuzzle(btns[firstGuessIndex].GetComponent<RectTransform>(), btns[firstGuessIndex].image, firstGuestBackSprite, () => btns[firstGuessIndex].interactable = true);
+            TurnOverPuzzle(btns[secondGuessIndex].GetComponent<RectTransform>(), btns[secondGuessIndex].image, secondGuestBackSprite, () => btns[secondGuessIndex].interactable = true);
         }
 
         yield return new WaitForSeconds(0.5f);
