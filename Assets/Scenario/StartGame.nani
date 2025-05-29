@@ -1,2 +1,58 @@
+@char Me.Sad01
+@back home-inside id:Home
 
+Me.Shocked02: Where am I?.. 
+Me.Sad01: Empty. Dark. Only... a voice in my head.
+
+@wait 1
+
+Me.Neutral01: (thinking) I must... I must remember. Where do I start?..
+
+@choice "My name... what is it?" goto:.ChooseName
+
+#ChooseName
+@hidePrinter
+@choice "Alex" goto:.SetNameAlex
+@choice "Mark" goto:.SetNameMark
+@choice "Leon" goto:.SetNameLeon
 @stop
+
+#SetNameAlex
+@set name="Alex"
+@goto .NameChosen
+
+#SetNameMark
+@set name="Mark"
+@goto .NameChosen
+
+#SetNameLeon
+@set name="Leon"
+@goto .NameChosen
+
+#NameChosen
+@showPrinter
+Me.Neutral02: {name}... Yes... That sounds right.
+
+@wait 1
+
+Me.Angry01: (thinking) But nothing else. Not a single memory. As if everything was erased...
+
+@wait 1
+
+Me.Neutral02: I need to go outside, maybe I'll remember something else there.
+
+@hidePrinter
+
+@wait 1
+
+@back street_1 id:Street
+
+@showPrinter
+
+Me.Neutral01: (thinking) There's a bar at the end of the street, maybe I'll meet someone I know there.
+
+@hidePrinter
+
+@wait 1
+
+@back bar-outside id:Bar
