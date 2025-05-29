@@ -183,37 +183,37 @@ MonoBehaviour:
   - Id: Characters/bf96f45a-32bd-4018-b528-7f026fba8334
     Resources:
     - name: Angry01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 25d9e49b2e027774b978d07e15bf306e
     - name: Angry02
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: f96cafb3db2eb154b8f0f10d8e7bccd0
     - name: Annoyed01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: ecb5cc83262fa3148982fa3a1c3eca00
     - name: Neutral01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 1a8459dfce6861748a5ea786b8072ad4
     - name: Neutral02
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 0dc26da709a0b9941a2a949f43b2e85e
     - name: Sad01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 49753df11f897894f91d60c29f853ffa
     - name: Sad02
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: a7c3b7745e6612d4f966827fdfc2d72d
     - name: Shocked01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: d1386b4c736e3a14a984030d77885756
     - name: Shocked02
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 154bee21e4f04a149a76bc8bc80eb447
     - name: Smile01
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: 1ae25775728abc54fb2cac4db2645205
     - name: Smile02
-      pathPrefix: Characters/Mark
+      pathPrefix: Characters/Me
       guid: c4a237432ca01224889b52744d50b164
   - Id: Characters/80d63e2d-5afd-40f3-bbcd-35cdca82f5c8
     Resources:
@@ -308,3 +308,29 @@ MonoBehaviour:
     - name: train-inside
       pathPrefix: Backgrounds/Trainstation
       guid: f5f7863fcdc01234881063e28594580f
+  - Id: Characters/f57592b8-7d08-4ab9-ba4b-e84b4040b0ec
+    Resources:
+    - name: Angry01
+      pathPrefix: Characters/Lia
+      guid: e3d2dd243caf7c04ca3cf7079d28f4eb
+    - name: Angry02
+      pathPrefix: Characters/Lia
+      guid: 3a5c0fe51163eb8479cb6a8b3ad8c6b3
+    - name: Annoyed01
+      pathPrefix: Characters/Lia
+      guid: 10b38b94f1a56cc4593165af9b1edbf0
+    - name: Annoyed02
+      pathPrefix: Characters/Lia
+      guid: 59723775ceae5b74b9439f1db7fd41a5
+    - name: Argue01
+      pathPrefix: Characters/Lia
+      guid: 7dfb82fa8d187a549a1e322d49d4da35
+    - name: Argue02
+      pathPrefix: Characters/Lia
+      guid: 3301a85f85e2c174ea42ea5f860d56ac
+    - name: Normal01
+      pathPrefix: Characters/Lia
+      guid: a2c9628b556341a4d9d3946b88e24fa8
+    - name: Normal02
+      pathPrefix: Characters/Lia
+      guid: 13314825e2dd3334e94c2d7775170995
