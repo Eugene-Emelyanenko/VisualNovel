@@ -172,3 +172,84 @@ MonoBehaviour:
     - name: Title
       pathPrefix: Scripts
       guid: 66dad5a9d988900489c14f6e29ed5a2b
+  - Id: Audio
+    Resources:
+    - name: TitleBackground
+      pathPrefix: Audio
+      guid: 2f3bcbeac7e424a4a9cca3905609d052
+  - Id: Characters/bf96f45a-32bd-4018-b528-7f026fba8334
+    Resources:
+    - name: Angry01
+      pathPrefix: Characters/Mark
+      guid: 25d9e49b2e027774b978d07e15bf306e
+    - name: Angry02
+      pathPrefix: Characters/Mark
+      guid: f96cafb3db2eb154b8f0f10d8e7bccd0
+    - name: Annoyed01
+      pathPrefix: Characters/Mark
+      guid: ecb5cc83262fa3148982fa3a1c3eca00
+    - name: Neutral01
+      pathPrefix: Characters/Mark
+      guid: 1a8459dfce6861748a5ea786b8072ad4
+    - name: Neutral02
+      pathPrefix: Characters/Mark
+      guid: 0dc26da709a0b9941a2a949f43b2e85e
+    - name: Sad01
+      pathPrefix: Characters/Mark
+      guid: 49753df11f897894f91d60c29f853ffa
+    - name: Sad02
+      pathPrefix: Characters/Mark
+      guid: a7c3b7745e6612d4f966827fdfc2d72d
+    - name: Shocked01
+      pathPrefix: Characters/Mark
+      guid: d1386b4c736e3a14a984030d77885756
+    - name: Shocked02
+      pathPrefix: Characters/Mark
+      guid: 154bee21e4f04a149a76bc8bc80eb447
+    - name: Smile01
+      pathPrefix: Characters/Mark
+      guid: 1ae25775728abc54fb2cac4db2645205
+    - name: Smile02
+      pathPrefix: Characters/Mark
+      guid: c4a237432ca01224889b52744d50b164
+  - Id: Characters/80d63e2d-5afd-40f3-bbcd-35cdca82f5c8
+    Resources:
+    - name: Angry01
+      pathPrefix: Characters/Lucy
+      guid: 6b97eed4dae485a46a6e964f6fac3a0f
+    - name: Angry02
+      pathPrefix: Characters/Lucy
+      guid: c8ffa6dc07869dd4bb276508121cbb4c
+    - name: Annoyed01
+      pathPrefix: Characters/Lucy
+      guid: a9f09c8f41b893f4b97bb2e5d62ab42b
+    - name: Annoyed02
+      pathPrefix: Characters/Lucy
+      guid: 050db2a124cc8754ab79b0b1679ebdbb
+    - name: Neutral01
+      pathPrefix: Characters/Lucy
+      guid: 9649ca7a2135d284ca1cb7868bdb8909
+    - name: Neutral02
+      pathPrefix: Characters/Lucy
+      guid: 801626ae3f9c1a2448b22c98a3f2acdb
+    - name: Sad01
+      pathPrefix: Characters/Lucy
+      guid: e97a08e377a76c349ae657d7453d125c
+    - name: Sad02
+      pathPrefix: Characters/Lucy
+      guid: ee3bd51f18b73ed42a8fe78b1f4d5486
+    - name: Sad03
+      pathPrefix: Characters/Lucy
+      guid: f1b4353e2be7a81448b3b5f901856008
+    - name: Smile01
+      pathPrefix: Characters/Lucy
+      guid: df7f38433bc223d46bb74320826aeeba
+    - name: Smile02
+      pathPrefix: Characters/Lucy
+      guid: 066e7cc08854ae34abff73d14a778835
+    - name: Smile03
+      pathPrefix: Characters/Lucy
+      guid: 6629dd40acd38a447866c81cf32cbe1f
+    - name: Smile04
+      pathPrefix: Characters/Lucy
+      guid: 777198b62d0c13343ac0b422bd5302b6
