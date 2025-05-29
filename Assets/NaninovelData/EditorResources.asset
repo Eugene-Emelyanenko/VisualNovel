@@ -110,7 +110,7 @@ MonoBehaviour:
       guid: 671ceb4f549ddf046913d7debf113469
     - name: LoadingUI
       pathPrefix: UI
-      guid: 53aad00e5cf184e458adb001c550518a
+      guid: 8d85c625d0719b44f8acc6b01a6ecab4
     - name: MovieUI
       pathPrefix: UI
       guid: f9a211517d1cb1a44964dc2254463049
@@ -172,6 +172,9 @@ MonoBehaviour:
     - name: Title
       pathPrefix: Scripts
       guid: 66dad5a9d988900489c14f6e29ed5a2b
+    - name: StartGame
+      pathPrefix: Scripts
+      guid: 1173833e855dca244beac51393fd255e
   - Id: Audio
     Resources:
     - name: TitleBackground
@@ -253,3 +256,55 @@ MonoBehaviour:
     - name: Smile04
       pathPrefix: Characters/Lucy
       guid: 777198b62d0c13343ac0b422bd5302b6
+  - Id: Backgrounds/73806473-94bd-4b1f-9d82-e356044e7de4
+    Resources:
+    - name: home-inside
+      pathPrefix: Backgrounds/Home
+      guid: 00f52fb3b59acd9459b124f5c8e3788c
+    - name: home-outside
+      pathPrefix: Backgrounds/Home
+      guid: 9a6adde33900c81479f23ae0fcd896c6
+    - name: home-bedroom
+      pathPrefix: Backgrounds/Home
+      guid: 7b28089781bc0eb479c28fd2dda2b414
+  - Id: Backgrounds/9b9288eb-0a5a-437f-98cb-ceb065e9d5e6
+    Resources:
+    - name: street_1
+      pathPrefix: Backgrounds/Street
+      guid: 9e0b5ab49d02b4546ab2a059aa30cd75
+    - name: street_2
+      pathPrefix: Backgrounds/Street
+      guid: 11446d9768096bd418dbd65173d4b6ad
+    - name: street_3
+      pathPrefix: Backgrounds/Street
+      guid: 894269d65e00a504bb9e3a61f5259793
+  - Id: Backgrounds/badfcf81-d1d1-4fb6-9750-ad29ce52d017
+    Resources:
+    - name: office-outside
+      pathPrefix: Backgrounds/Office
+      guid: f42786e4c3c0670468a86baee9ec5dda
+    - name: office_inside_1
+      pathPrefix: Backgrounds/Office
+      guid: 4bad0b56d23bdf644a27303ccd16db6b
+    - name: office-inside_2
+      pathPrefix: Backgrounds/Office
+      guid: f53013095e7a29c478cdabce5cdd56ee
+  - Id: Backgrounds/081ec78c-29f3-44ae-b443-2a671d4bdc23
+    Resources:
+    - name: bar-inside
+      pathPrefix: Backgrounds/Bar
+      guid: 7e1a83ac340e8c24eadefa93ced1ed6c
+    - name: bar-outside
+      pathPrefix: Backgrounds/Bar
+      guid: ac9de095c9c2e744795bafcc203fc84e
+  - Id: Backgrounds/f594c491-b1c8-4bef-ad82-68d75f2514ab
+    Resources:
+    - name: trainstation_1
+      pathPrefix: Backgrounds/Trainstation
+      guid: 41fcdd1a2cc21304ebb28151f9d7511f
+    - name: trainstation_2
+      pathPrefix: Backgrounds/Trainstation
+      guid: 9a14da86684c752409998a46c17feb86
+    - name: train-inside
+      pathPrefix: Backgrounds/Trainstation
+      guid: f5f7863fcdc01234881063e28594580f
