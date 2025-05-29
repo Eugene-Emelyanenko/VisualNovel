@@ -1,3 +1,19 @@
+@back bg5 time:2
 @bgm TitleBackground
-@back bg3
+@spawn Rain
+@stop
+
+# OnNewGame
+@sfx ButtonClick
+@stopBgm
+@stop
+
+# OnLoad
+@sfx ButtonClick
+@wait 0.5
+@stop
+
+# OnExit
+@sfx ButtonClick
+@wait 1.5
 @stop

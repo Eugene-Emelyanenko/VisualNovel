@@ -180,6 +180,12 @@ MonoBehaviour:
     - name: TitleBackground
       pathPrefix: Audio
       guid: 2f3bcbeac7e424a4a9cca3905609d052
+    - name: ButtonClick
+      pathPrefix: Audio
+      guid: 604588be2879c0243a2739eb5c6e434e
+    - name: StartGameClick
+      pathPrefix: Audio
+      guid: e63dfc3a30a742746ac6fdc23a62fba5
   - Id: Characters/bf96f45a-32bd-4018-b528-7f026fba8334
     Resources:
     - name: Angry01
@@ -334,3 +340,13 @@ MonoBehaviour:
     - name: Normal02
       pathPrefix: Characters/Lia
       guid: 13314825e2dd3334e94c2d7775170995
+  - Id: TextPrinters/5c9da9e6-2b47-4cb1-9994-b754df8cf768
+    Resources:
+    - name: MyDialogue
+      pathPrefix: TextPrinters
+      guid: da61dfe262963db4f85fc645e2808637
+  - Id: ChoiceHandlers/8616b128-ed07-455c-8c82-9a60c4561661
+    Resources:
+    - name: MyButtonList
+      pathPrefix: ChoiceHandlers
+      guid: c5f4f48facc1c2c4ebc3381124f26a9c

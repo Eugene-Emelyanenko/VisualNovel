@@ -1,5 +1,10 @@
-@char Me.Sad01
+@printer MyDialogue
+
 @back home-inside id:Home
+
+@wait 0.5
+
+@char Me.Sad01
 
 Me.Shocked02: Where am I?.. 
 Me.Sad01: Empty. Dark. Only... a voice in my head.
@@ -8,13 +13,12 @@ Me.Sad01: Empty. Dark. Only... a voice in my head.
 
 Me.Neutral01: (thinking) I must... I must remember. Where do I start?..
 
-@choice "My name... what is it?" goto:.ChooseName
+"My name... what is it?"
 
-#ChooseName
 @hidePrinter
-@choice "Alex" goto:.SetNameAlex
-@choice "Mark" goto:.SetNameMark
-@choice "Leon" goto:.SetNameLeon
+@choice "Alex" handler:MyButtonList goto:.SetNameAlex
+@choice "Mark" handler:MyButtonList goto:.SetNameMark
+@choice "Leon" handler:MyButtonList goto:.SetNameLeon
 @stop
 
 #SetNameAlex
@@ -42,17 +46,16 @@ Me.Angry01: (thinking) But nothing else. Not a single memory. As if everything w
 Me.Neutral02: I need to go outside, maybe I'll remember something else there.
 
 @hidePrinter
+@hideChars time:1
 
 @wait 1
 
 @back street_1 id:Street
 
 @showPrinter
+@char Me.Shocked02
 
 Me.Neutral01: (thinking) There's a bar at the end of the street, maybe I'll meet someone I know there.
 
 @hidePrinter
-
-@wait 1
-
-@back bar-outside id:Bar
+@hideChars time:1

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114515851666532020}
   - component: {fileID: 114704911712777760}
   m_Layer: 5
-  m_Name: ButtonList
+  m_Name: MyButtonList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   controlsLegend: {fileID: 0}
   fontChangeConfiguration: []
   buttonsContainer: {fileID: 4424433731862741568}
-  defaultButtonPrefab: {fileID: 2090994136984198299, guid: 42edc7aecc2c80841908c954370cb307, type: 3}
+  defaultButtonPrefab: {fileID: 2090994136984198299, guid: a2d530341b9331947866f17141cc86cd, type: 3}
   focusChoiceButtons: 1
 --- !u!225 &225470808532994266
 CanvasGroup:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 655c0ca799ca27c47b3de0d6aa723927, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fe45b56a3b57644986c461cce062f24, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -7}
+  m_AnchoredPosition: {x: 400, y: -30}
   m_SizeDelta: {x: 800, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7613696821062467036
