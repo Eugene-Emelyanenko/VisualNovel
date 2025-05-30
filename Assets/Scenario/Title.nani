@@ -1,4 +1,4 @@
-@back bg5 time:2
+@back bg5
 @bgm TitleBackground
 @spawn Rain
 @stop

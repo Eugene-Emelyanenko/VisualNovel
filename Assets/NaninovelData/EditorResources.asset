@@ -144,6 +144,9 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+    - name: CardGameUI
+      pathPrefix: UI
+      guid: e0a1d3c7a7825714792d56fe5817c48c
   - Id: Backgrounds/a4a70d06-a382-42ca-b600-d2b06b57f2d8
     Resources:
     - name: bg1
@@ -350,3 +353,8 @@ MonoBehaviour:
     - name: MyButtonList
       pathPrefix: ChoiceHandlers
       guid: c5f4f48facc1c2c4ebc3381124f26a9c
+  - Id: Backgrounds/440a58ad-3fc3-4d29-867b-3f931d9ae207
+    Resources:
+    - name: table
+      pathPrefix: Backgrounds/Table
+      guid: 1ec159a3677340e4b86349b9010b6d90

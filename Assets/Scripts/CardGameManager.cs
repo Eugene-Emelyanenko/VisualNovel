@@ -46,16 +46,33 @@ public class CardGameManager : MonoBehaviour
 
     private bool canPickPuzzle = true;
 
-    private void Start()
+    private bool isCardsCreated = false;
+
+    public void RestartGame()
     {
+        isGameOver = false;
+        canPickPuzzle = true;
+        firstGuess = secondGuess = false;
+
         if (size % 2 != 0)
         {
             size++;
             Debug.LogWarning("The size cannot be an odd number. It has been adjusted to the next even number: " + size);
         }
 
-        AddButtons();
-        AddGamePuzzles();
+        if(!isCardsCreated)
+        {
+            AddButtons();
+            AddGamePuzzles();
+        }
+
+        SetBackSprites();
+
+        foreach (Button button in btns)
+        {
+            button.interactable = true;
+        }
+
         Shuffle(gamePuzzles);
 
         gameGuesses = (gamePuzzles.Count) / 2;
@@ -74,9 +91,17 @@ public class CardGameManager : MonoBehaviour
             puzzleObject.name = $"{i}";
             Button puzzleButton = puzzleObject.GetComponent<Button>();
             puzzleButton.onClick.AddListener(PizkPuzzle);
-            btns.Add(puzzleButton);
+            btns.Add(puzzleButton);          
+        }
 
-            puzzleButton.image.sprite = backSprites[i % 2];
+        isCardsCreated = true;
+    }
+
+    private void SetBackSprites()
+    {
+        for (int i = 0; i < btns.Count; i++)
+        {
+            btns[i].image.sprite = backSprites[i % 2];
         }
     }
 
