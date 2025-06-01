@@ -25,21 +25,26 @@ Me: Let me think...
 @choice "Give the item to Lia" handler:MyButtonList goto:.GiveToLia
 @choice "Keep it for yourself" handler:MyButtonList goto:.KeepForSelf
 
+@hidePrinter
+
 @stop
 
 # GiveToLucy
+@sfx ButtonClick
 @set itemOwner="Lucy"
 Lucy.Smile04: Hah! I knew you'd make the right call.
 @char Lia.Argue02
 @goto .FinalReaction
 
 # GiveToLia
+@sfx ButtonClick
 @set itemOwner="Lia"
 Lucy.Angry01: You're giving it to her? After everything?
 @char Lia.Normal02
 @goto .FinalReaction
 
 # KeepForSelf
+@sfx ButtonClick
 @set itemOwner="Me"
 Lucy.Angry02: Keeping it for yourself? Bold move...
 @char Lia.Angry01
@@ -63,7 +68,8 @@ Lucy.Neutral01: That makes sense. You were found unconscious near the edge of th
 @char Lucy.Neutral01 look:left
 Lucy.Smile01: If you want to find out who you really are — go to the <b>Office</b>. Look for a woman named <b>Lia</b>. She might help you remember.
 
-;Narrator: Quest updated: Find Lia in the Office to learn more about your past.
+@resetQuest name:"New Acquaintances"
+@addQuest name:"New Acquaintances" info:"Find Lia in the Office to learn more about your past."
 
 @gosub .FirstQuestTip
 
@@ -93,6 +99,8 @@ Lucy.Smile01: Just click the <b>Map</b> button — it’s in the top-right corne
 
 # FinalReaction
 
+@completeQuest name:"Final Decision"
+
 @if itemOwner="Lucy"
 Lia.Angry01: So... that's it? You chose her?
 
@@ -106,7 +114,5 @@ Lucy.Angry02: So you don’t trust anyone. Typical.
 Lia.Angry01: You think keeping it will help? Fine. Do it your way.
 
 @endif
-
-;Narrator: Quest completed. But your path is just beginning...
 
 @stop

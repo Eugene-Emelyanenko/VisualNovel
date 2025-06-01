@@ -153,6 +153,9 @@ MonoBehaviour:
     - name: MapUI
       pathPrefix: UI
       guid: 1dbbc4edd6005174484a2e6aac877e7d
+    - name: QuestManager
+      pathPrefix: UI
+      guid: 0ab6b0248b046aa46aa297d0bf45496d
   - Id: Backgrounds/a4a70d06-a382-42ca-b600-d2b06b57f2d8
     Resources:
     - name: bg-title

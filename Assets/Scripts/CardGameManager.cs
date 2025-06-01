@@ -213,6 +213,7 @@ public class CardGameManager : MonoBehaviour
         isGameOver = true;
         ICustomVariableManager vars = Engine.GetService<ICustomVariableManager>();
         vars.TrySetVariableValue("isCardGameCompleted", true);
+        QuestManager.Instance.CompleteQuest("Card Game");
         playScript.Play();
     }
 

@@ -1,5 +1,6 @@
 @bgm Scenario loop:true volume:0.25
 @printer MyDialogue
+@showUI QuestManager
 
 @back hospital time:5
 
@@ -17,14 +18,17 @@ Me: My name... what is it?
 @stop
 
 # SetNameAlex
+@sfx ButtonClick
 @set name="Alex"
 @goto .NameChosen
 
 # SetNameMark
+@sfx ButtonClick
 @set name="Mark"
 @goto .NameChosen
 
 # SetNameLeon
+@sfx ButtonClick
 @set name="Leon"
 @goto .NameChosen
 

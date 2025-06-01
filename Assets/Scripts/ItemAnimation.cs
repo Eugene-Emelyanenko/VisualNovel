@@ -13,11 +13,37 @@ public class ItemAnimation : MonoBehaviour
     [SerializeField] private float scaleTime;
     [SerializeField] private UnityEvent endAction;
 
-    public void Play()
+    private Vector3 startPos;
+    private Vector3 startScale;
+
+    private Sequence sequence;
+
+    private void Start()
     {
-        var sequence = DOTween.Sequence();
+        startPos = transform.position;
+        startScale = transform.localScale;
+    }
+
+    public void OnShow()
+    {
+        transform.position = startPos;
+        transform.localScale = startScale;
+    }
+
+    public void OnHide()
+    {
+        sequence.Kill();
+    }
+
+    public void Play()
+    {       
+        sequence = DOTween.Sequence();
         sequence.Append(itemTransform.DOMove(targetPos, moveTime));
         sequence.Join(itemTransform.DOScale(targetScale, scaleTime));
-        sequence.OnComplete(() => endAction?.Invoke());
+        sequence.OnComplete(() =>
+        {
+            endAction?.Invoke();
+            sequence = null;
+        });
     }
 }

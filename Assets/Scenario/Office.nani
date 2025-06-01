@@ -6,7 +6,7 @@
 @hideChars
 @hidePrinter 
 @hideUI MapUI
-@resetText 
+@resetText
 @back office
 
 @if isItemCollected=true&&isReturnedToOffice=false
@@ -16,11 +16,12 @@ Me: But I have the item. Whatever it is... it matters.
 @set isReturnedToOffice=true
 @set isFourthQestCollected=true
 Me: I need to go back to the very beginning.
-;Narrator: Quest updated: Return to Kai and decide who gets the item.
+@resetQuest name:"Final Decision"
+@addQuest name:"Final Decision" info:"Return to Hospital and decide who gets the item."
 @showUI MapUI
 @stop
 
-@else
+@elseif isItemCollected=true&&isReturnedToOffice=true
 Me: I need to go back to the very beginning.
 @showUI MapUI
 @stop
@@ -32,6 +33,7 @@ Me: I need to go back to the very beginning.
 @if isSecondQuestCollected=false
 @set isCardGameCompleted=false
 Lia.Normal01: Hello!
+@completeQuest name:"New Acquaintances"
 Me: Are you... Lia?
 @set isFirstQuestCompleted=true
 Lia.Normal01: I am. And you must be... <b>{name}</b>, right?
@@ -44,7 +46,8 @@ Lia.Argue01: Hmph. Typical Lucy, throwing people into things they don’t unders
 Lia.Normal02: Fine. You want answers? You'll have to earn them. Start by matching the memory cards.
 Me: Memory cards?
 Lia.Normal01: They belonged to you once. Maybe they'll help you remember something... or someone.
-; Narrator: Quest updated: Complete the memory card game.
+@resetQuest name:"Card Game"
+@addQuest name:"Card Game" info:"Complete the memory card game"
 @set isSecondQuestCollected=true
 @goto CardGame
 @stop
@@ -68,7 +71,8 @@ Me: I have to check. I don’t know what it is, but… it felt vital. Like a pie
 Lia.Normal02: Then don’t waste time. The room might still be untouched.
 @set isRoomUnlocked=true
 @set isThirdQestCollected=true
-; Narrator: Quest updated: Go to the abandoned building and retrieve the hidden item.
+@resetQuest name:"The Item"
+@addQuest name:"The Item" info:"Go to the Room and retrieve the hidden item"
 @endif
 
 @showUI MapUI
