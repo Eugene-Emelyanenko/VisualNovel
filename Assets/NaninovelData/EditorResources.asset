@@ -192,7 +192,7 @@ MonoBehaviour:
       guid: 8d0a27eb89fd7694e88b437a7eede733
   - Id: Audio
     Resources:
-    - name: TitleBackground
+    - name: Title
       pathPrefix: Audio
       guid: 2f3bcbeac7e424a4a9cca3905609d052
     - name: ButtonClick
@@ -216,6 +216,9 @@ MonoBehaviour:
     - name: Gameover
       pathPrefix: Audio
       guid: f66f347f5588ffb48894bfb15bb58876
+    - name: Scenario
+      pathPrefix: Audio
+      guid: 6834fe7cea464eb46907969e830ba0dd
   - Id: Characters/80d63e2d-5afd-40f3-bbcd-35cdca82f5c8
     Resources:
     - name: Angry01

@@ -1,5 +1,5 @@
 @back bg-title
-@bgm TitleBackground
+@bgm Title
 @rain time:0
 @stop
 

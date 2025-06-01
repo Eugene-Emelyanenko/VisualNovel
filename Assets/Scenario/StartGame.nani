@@ -1,3 +1,4 @@
+@bgm Scenario loop:true volume:0.25
 @printer MyDialogue
 
 @back hospital time:5
@@ -9,33 +10,32 @@ Me: (thinking) I must... I must remember. Where do I start?..
 
 Me: My name... what is it?
 
-@hidePrinter
-@choice "Alex" handler:MyButtonList goto:.SetNameAlex
-@choice "Mark" handler:MyButtonList goto:.SetNameMark
-@choice "Leon" handler:MyButtonList goto:.SetNameLeon
+@hidePrinter 
+@choice Alex handler:MyButtonList goto:.SetNameAlex
+@choice Mark handler:MyButtonList goto:.SetNameMark
+@choice Leon handler:MyButtonList goto:.SetNameLeon
 @stop
 
-#SetNameAlex
+# SetNameAlex
 @set name="Alex"
 @goto .NameChosen
 
-#SetNameMark
+# SetNameMark
 @set name="Mark"
 @goto .NameChosen
 
-#SetNameLeon
+# SetNameLeon
 @set name="Leon"
 @goto .NameChosen
 
-#NameChosen
-@showPrinter
+# NameChosen
+@showPrinter 
 Me: {name}... Yes... That sounds right.
 
-@hidePrinter
-@resetText
+@hidePrinter 
+@resetText 
 
 @set isHospitalUnlocked=true
 @goto Hospital
 
 @stop
-
