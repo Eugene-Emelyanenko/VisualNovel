@@ -5,7 +5,7 @@
 @resetText 
 @back hospital
 
-@char Lucy.Smile01 look:right pos:15,0 scale:0.75,0.75
+@char Lucy.Smile01 look:right pos:15,0 scale:0.65,0.65
 @animate Lucy posX:25 time:1 wait:true
 
 @if isFourthQestCollected=true
@@ -13,7 +13,37 @@
 @char Lia.Normal01 look:right pos:85 scale:0.5,0.5
 @animate Lia posX:75
 
+Lucy.Smile01: You're back. Did you find it?
+
+Me: Yes. I found it.
+
+Lia.Normal02: So what's next? Are you going to keep the item or are you going to give it to one of us?
+
+Me: Let me think...
+
+@choice "Give the item to Lucy" handler:MyButtonList goto:.GiveToLucy
+@choice "Give the item to Lia" handler:MyButtonList goto:.GiveToLia
+@choice "Keep it for yourself" handler:MyButtonList goto:.KeepForSelf
+
 @stop
+
+# GiveToLucy
+@set itemOwner="Lucy"
+Lucy.Smile04: Hah! I knew you'd make the right call.
+@char Lia.Argue02
+@goto .FinalReaction
+
+# GiveToLia
+@set itemOwner="Lia"
+Lucy.Angry01: You're giving it to her? After everything?
+@char Lia.Normal02
+@goto .FinalReaction
+
+# KeepForSelf
+@set itemOwner="Me"
+Lucy.Angry02: Keeping it for yourself? Bold move...
+@char Lia.Angry01
+@goto .FinalReaction
 
 @endif
 
@@ -60,3 +90,23 @@ Lucy.Smile01: If you want to find out who you really are — go to the office bu
 Lucy.Neutral01: You can visit the <b>Office</b> using the map.
 Lucy.Smile01: Just click the <b>Map</b> button — it’s in the top-right corner of the screen.
 @return
+
+# FinalReaction
+
+@if itemOwner="Lucy"
+Lia.Angry01: So... that's it? You chose her?
+
+@elseif itemOwner="Lia"
+Lucy.Angry02: She's playing you. You'll regret it.
+
+@elseif itemOwner="Me"
+@char Lucy.Angry01 look:right
+Lucy.Angry02: So you don’t trust anyone. Typical.
+@char Lia.Angry01 look:left
+Lia.Angry01: You think keeping it will help? Fine. Do it your way.
+
+@endif
+
+;Narrator: Quest completed. But your path is just beginning...
+
+@stop
