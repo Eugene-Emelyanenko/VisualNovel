@@ -147,29 +147,29 @@ MonoBehaviour:
     - name: CardGameUI
       pathPrefix: UI
       guid: e0a1d3c7a7825714792d56fe5817c48c
+    - name: ItemUI
+      pathPrefix: UI
+      guid: a9b63d21fd57d4642a251f8854e1f7cc
+    - name: MapUI
+      pathPrefix: UI
+      guid: 1dbbc4edd6005174484a2e6aac877e7d
   - Id: Backgrounds/a4a70d06-a382-42ca-b600-d2b06b57f2d8
     Resources:
-    - name: bg1
-      pathPrefix: Backgrounds/MainBackground
-      guid: f7cc00a4bfc4abf4eaa57393773a4797
-    - name: bg2
-      pathPrefix: Backgrounds/MainBackground
-      guid: 28413ae1a97be034eb8813b75282585f
-    - name: bg3
-      pathPrefix: Backgrounds/MainBackground
-      guid: 4a5d168a8c1f7f04a8d3157208be5774
-    - name: bg4
-      pathPrefix: Backgrounds/MainBackground
-      guid: 766a594eedaec8846a30a18e532ce193
-    - name: bg5
+    - name: bg-title
       pathPrefix: Backgrounds/MainBackground
       guid: dc68765a7daf4034494c49612d6a704c
-    - name: bg6
+    - name: room
       pathPrefix: Backgrounds/MainBackground
-      guid: 0706397dcddd417428712b7584f2cbd3
-    - name: bg_Scene
+      guid: 36fb8e76b6e5bc543a0de41b25fc9a0b
+    - name: table
       pathPrefix: Backgrounds/MainBackground
-      guid: cc23b315f775d8541aa30042704019af
+      guid: 1ec159a3677340e4b86349b9010b6d90
+    - name: hospital
+      pathPrefix: Backgrounds/MainBackground
+      guid: 670fb07f6d0da104486b325a38e8f77d
+    - name: office
+      pathPrefix: Backgrounds/MainBackground
+      guid: f53013095e7a29c478cdabce5cdd56ee
   - Id: Scripts
     Resources:
     - name: Title
@@ -178,6 +178,18 @@ MonoBehaviour:
     - name: StartGame
       pathPrefix: Scripts
       guid: 1173833e855dca244beac51393fd255e
+    - name: Hospital
+      pathPrefix: Scripts
+      guid: abb4d4aae3b2b3b438f871fba5dfae72
+    - name: Office
+      pathPrefix: Scripts
+      guid: 777a6df6fbe52e742b4d305466dda322
+    - name: Room
+      pathPrefix: Scripts
+      guid: 31757d69dc27a2348a9583f42adeb70e
+    - name: CardGame
+      pathPrefix: Scripts
+      guid: 8d0a27eb89fd7694e88b437a7eede733
   - Id: Audio
     Resources:
     - name: TitleBackground
@@ -186,44 +198,24 @@ MonoBehaviour:
     - name: ButtonClick
       pathPrefix: Audio
       guid: 604588be2879c0243a2739eb5c6e434e
-    - name: StartGameClick
+    - name: ItemCollect
       pathPrefix: Audio
-      guid: e63dfc3a30a742746ac6fdc23a62fba5
-  - Id: Characters/bf96f45a-32bd-4018-b528-7f026fba8334
-    Resources:
-    - name: Angry01
-      pathPrefix: Characters/Me
-      guid: 25d9e49b2e027774b978d07e15bf306e
-    - name: Angry02
-      pathPrefix: Characters/Me
-      guid: f96cafb3db2eb154b8f0f10d8e7bccd0
-    - name: Annoyed01
-      pathPrefix: Characters/Me
-      guid: ecb5cc83262fa3148982fa3a1c3eca00
-    - name: Neutral01
-      pathPrefix: Characters/Me
-      guid: 1a8459dfce6861748a5ea786b8072ad4
-    - name: Neutral02
-      pathPrefix: Characters/Me
-      guid: 0dc26da709a0b9941a2a949f43b2e85e
-    - name: Sad01
-      pathPrefix: Characters/Me
-      guid: 49753df11f897894f91d60c29f853ffa
-    - name: Sad02
-      pathPrefix: Characters/Me
-      guid: a7c3b7745e6612d4f966827fdfc2d72d
-    - name: Shocked01
-      pathPrefix: Characters/Me
-      guid: d1386b4c736e3a14a984030d77885756
-    - name: Shocked02
-      pathPrefix: Characters/Me
-      guid: 154bee21e4f04a149a76bc8bc80eb447
-    - name: Smile01
-      pathPrefix: Characters/Me
-      guid: 1ae25775728abc54fb2cac4db2645205
-    - name: Smile02
-      pathPrefix: Characters/Me
-      guid: c4a237432ca01224889b52744d50b164
+      guid: cc07a6507f8fc6246996e389364899e7
+    - name: CorrectGuess
+      pathPrefix: Audio
+      guid: c6f84c13acb9f6d4e8821ee0fa590ba2
+    - name: WrongGuess
+      pathPrefix: Audio
+      guid: 91663c6bed606b346a7d728c362221f7
+    - name: PickCard
+      pathPrefix: Audio
+      guid: 91b38866f024c8f40b8fbf6407705d76
+    - name: UnPickCard
+      pathPrefix: Audio
+      guid: c0f78b33e3b90734eadfb8e988e85621
+    - name: Gameover
+      pathPrefix: Audio
+      guid: f66f347f5588ffb48894bfb15bb58876
   - Id: Characters/80d63e2d-5afd-40f3-bbcd-35cdca82f5c8
     Resources:
     - name: Angry01
@@ -265,58 +257,6 @@ MonoBehaviour:
     - name: Smile04
       pathPrefix: Characters/Lucy
       guid: 777198b62d0c13343ac0b422bd5302b6
-  - Id: Backgrounds/73806473-94bd-4b1f-9d82-e356044e7de4
-    Resources:
-    - name: home-inside
-      pathPrefix: Backgrounds/Home
-      guid: 00f52fb3b59acd9459b124f5c8e3788c
-    - name: home-outside
-      pathPrefix: Backgrounds/Home
-      guid: 9a6adde33900c81479f23ae0fcd896c6
-    - name: home-bedroom
-      pathPrefix: Backgrounds/Home
-      guid: 7b28089781bc0eb479c28fd2dda2b414
-  - Id: Backgrounds/9b9288eb-0a5a-437f-98cb-ceb065e9d5e6
-    Resources:
-    - name: street_1
-      pathPrefix: Backgrounds/Street
-      guid: 9e0b5ab49d02b4546ab2a059aa30cd75
-    - name: street_2
-      pathPrefix: Backgrounds/Street
-      guid: 11446d9768096bd418dbd65173d4b6ad
-    - name: street_3
-      pathPrefix: Backgrounds/Street
-      guid: 894269d65e00a504bb9e3a61f5259793
-  - Id: Backgrounds/badfcf81-d1d1-4fb6-9750-ad29ce52d017
-    Resources:
-    - name: office-outside
-      pathPrefix: Backgrounds/Office
-      guid: f42786e4c3c0670468a86baee9ec5dda
-    - name: office_inside_1
-      pathPrefix: Backgrounds/Office
-      guid: 4bad0b56d23bdf644a27303ccd16db6b
-    - name: office-inside_2
-      pathPrefix: Backgrounds/Office
-      guid: f53013095e7a29c478cdabce5cdd56ee
-  - Id: Backgrounds/081ec78c-29f3-44ae-b443-2a671d4bdc23
-    Resources:
-    - name: bar-inside
-      pathPrefix: Backgrounds/Bar
-      guid: 7e1a83ac340e8c24eadefa93ced1ed6c
-    - name: bar-outside
-      pathPrefix: Backgrounds/Bar
-      guid: ac9de095c9c2e744795bafcc203fc84e
-  - Id: Backgrounds/f594c491-b1c8-4bef-ad82-68d75f2514ab
-    Resources:
-    - name: trainstation_1
-      pathPrefix: Backgrounds/Trainstation
-      guid: 41fcdd1a2cc21304ebb28151f9d7511f
-    - name: trainstation_2
-      pathPrefix: Backgrounds/Trainstation
-      guid: 9a14da86684c752409998a46c17feb86
-    - name: train-inside
-      pathPrefix: Backgrounds/Trainstation
-      guid: f5f7863fcdc01234881063e28594580f
   - Id: Characters/f57592b8-7d08-4ab9-ba4b-e84b4040b0ec
     Resources:
     - name: Angry01
@@ -353,8 +293,3 @@ MonoBehaviour:
     - name: MyButtonList
       pathPrefix: ChoiceHandlers
       guid: c5f4f48facc1c2c4ebc3381124f26a9c
-  - Id: Backgrounds/440a58ad-3fc3-4d29-867b-3f931d9ae207
-    Resources:
-    - name: table
-      pathPrefix: Backgrounds/Table
-      guid: 1ec159a3677340e4b86349b9010b6d90

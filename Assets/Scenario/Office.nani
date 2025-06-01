@@ -1,0 +1,108 @@
+@if isCardGameCompleted=true
+@hideUI CardGameUI wait:true
+@endif
+
+@set currentLocation="Office"
+@hideChars
+@hidePrinter 
+@hideUI MapUI
+@resetText 
+@back office
+
+@if isItemCollected=true&&isReturnedToOffice=false
+
+Me: She's gone...
+
+Me: I thought she would wait. Maybe I was wrong.
+
+Me: But I have the item. Whatever it is... it matters.
+
+@set isReturnedToOffice=true
+@set isFourthQestCollected=true
+
+Me: I need to go back to the very beginning.
+
+;Narrator: Quest updated: Return to Kai and decide who gets the item.
+
+@goto Hospital
+
+@stop
+
+@endif
+
+@char Lia.Normal01 look:right pos:85 scale:0.5,0.5
+@animate Lia posX:75
+
+@if isSecondQuestCollected=false
+
+@set isCardGameCompleted=false
+
+Lia.Normal01: Hello!
+
+Me: Are you... Lia?
+@set isFirstQuestCompleted=true
+
+Lia.Normal01: I am. And you must be... {name}, right?
+
+@char Lia.Normal02 look:left
+Me: Yes. Or at least, that's what I think my name is.
+
+Lia.Normal02: So it's true — you really don't remember anything?
+
+Me: Nothing. Just a voice... and the name Lucy.
+
+@char Lia.Argue01 look:right
+Lia.Argue01: Hmph. Typical Lucy, throwing people into things they don’t understand.
+
+Lia.Normal02: Fine. You want answers? You'll have to earn them. Start by matching the memory cards.
+
+Me: Memory cards?
+
+Lia.Normal01: They belonged to you once. Maybe they'll help you remember something... or someone.
+
+; Narrator: Quest updated: Complete the memory card game.
+
+@set isSecondQuestCollected=true
+
+@goto CardGame
+
+@stop
+
+@elseif isThirdQestCollected=true
+
+Lia.Normal02: Then don’t waste time. The room might still be untouched.
+
+@else
+
+@char Lia.Normal01 look:right
+Lia.Normal01: So... the cards worked?
+
+Me: Yeah. I remembered something.
+
+@char Lia.Normal02 look:left
+Lia.Normal02: What did you see?
+
+Me: A room. Small, dark… familiar. There was something there — something important.
+
+@char Lia.Argue01 look:right
+Lia.Argue01: A memory of your past?
+
+Me: No. A memory of me hiding something. I knew someone was coming for me… I didn’t have much time, so I stashed it in the wall.
+
+@char Lia.Normal01 look:left
+Lia.Normal01: And now you think it’s still there?
+
+Me: I have to check. I don’t know what it is, but… it felt vital. Like a piece of the puzzle.
+
+Lia.Normal02: Then don’t waste time. The room might still be untouched.
+
+@set isRoomUnlocked=true
+@set isThirdQestCollected=true
+
+; Narrator: Quest updated: Go to the abandoned building and retrieve the hidden item.
+
+@endif
+
+@showUI MapUI
+
+@stop

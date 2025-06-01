@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6306036015961478117}
   - component: {fileID: 6306036015961478116}
   - component: {fileID: -4664784700488066473}
+  - component: {fileID: 5626272129347323061}
   m_Layer: 5
   m_Name: CardGameUI
   m_TagString: Untagged
@@ -108,7 +109,7 @@ MonoBehaviour:
   blockInputWhenVisible: 0
   adaptToInputMode: 1
   allowedSamplers: []
-  modalUI: 0
+  modalUI: 1
   modalGroup: 
   buttonControls: {fileID: 0}
   controlsLegend: {fileID: 0}
@@ -180,6 +181,7 @@ MonoBehaviour:
   puzzleField: {fileID: 3752048940765206791}
   fieldGrid: {fileID: 2318830560739145737}
   puzzlePrefab: {fileID: 843761557918107530, guid: a3611531b2e050c429e09723d9587f87, type: 3}
+  playScript: {fileID: 5626272129347323061}
   puzzleSize: {x: 208, y: 308}
   puzzleSpace: {x: 50, y: 50}
   columnCount: 4
@@ -196,6 +198,27 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0f0cfc880ad681947809b3d4087197bf, type: 3}
   gamePuzzles: []
   btns: []
+  correctGuessSoundName: CorrectGuess
+  wrongGuessSoundName: WrongGuess
+  gameoverSoundName: Gameover
+  pickCardSoundName: PickCard
+  unPickCardSoundName: UnPickCard
+--- !u!114 &5626272129347323061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306036015961478139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5975c9748a52c8d43b34c8d7c428cacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptName: Office
+  scriptText: 
+  playOnAwake: 0
+  disableWaitInput: 0
 --- !u!1 &6580780929375692871
 GameObject:
   m_ObjectHideFlags: 0

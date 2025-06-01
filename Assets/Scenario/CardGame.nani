@@ -1,0 +1,6 @@
+@hidePrinter 
+@resetText 
+@hideChars
+@back table
+@showUI CardGameUI
+@stop

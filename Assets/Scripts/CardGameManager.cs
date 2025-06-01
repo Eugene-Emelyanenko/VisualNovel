@@ -1,7 +1,9 @@
 using DG.Tweening;
+using Naninovel;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +15,7 @@ public class CardGameManager : MonoBehaviour
     [SerializeField] private Transform puzzleField;
     [SerializeField] private GridLayoutGroup fieldGrid;
     [SerializeField] private GameObject puzzlePrefab;
+    [SerializeField] private PlayScript playScript;
 
     [Header("Variables")]
     [SerializeField] private Vector2 puzzleSize;
@@ -29,6 +32,13 @@ public class CardGameManager : MonoBehaviour
     [Header("Lists")]
     [SerializeField] private List<Sprite> gamePuzzles = new List<Sprite>();
     [SerializeField] private List<Button> btns = new List<Button>();
+
+    [Header("SFX")]
+    [SerializeField] private string correctGuessSoundName;
+    [SerializeField] private string wrongGuessSoundName;
+    [SerializeField] private string gameoverSoundName;
+    [SerializeField] private string pickCardSoundName;
+    [SerializeField] private string unPickCardSoundName;
 
     private Sprite firstGuestBackSprite;
     private Sprite secondGuestBackSprite;
@@ -53,6 +63,7 @@ public class CardGameManager : MonoBehaviour
         isGameOver = false;
         canPickPuzzle = true;
         firstGuess = secondGuess = false;
+        countCorrectGuesses = 0;
 
         if (size % 2 != 0)
         {
@@ -60,7 +71,7 @@ public class CardGameManager : MonoBehaviour
             Debug.LogWarning("The size cannot be an odd number. It has been adjusted to the next even number: " + size);
         }
 
-        if(!isCardsCreated)
+        if (!isCardsCreated)
         {
             AddButtons();
             AddGamePuzzles();
@@ -84,14 +95,14 @@ public class CardGameManager : MonoBehaviour
         fieldGrid.constraintCount = columnCount;
         fieldGrid.cellSize = puzzleSize;
         fieldGrid.spacing = puzzleSpace;
-        
+
         for (int i = 0; i < size; i++)
-        {            
+        {
             GameObject puzzleObject = Instantiate(puzzlePrefab, puzzleField);
             puzzleObject.name = $"{i}";
             Button puzzleButton = puzzleObject.GetComponent<Button>();
             puzzleButton.onClick.AddListener(PizkPuzzle);
-            btns.Add(puzzleButton);          
+            btns.Add(puzzleButton);
         }
 
         isCardsCreated = true;
@@ -125,8 +136,9 @@ public class CardGameManager : MonoBehaviour
             firstGuestBackSprite = btns[firstGuessIndex].image.sprite;
 
             TurnOverPuzzle(btns[firstGuessIndex].GetComponent<RectTransform>(), btns[firstGuessIndex].image, gamePuzzles[firstGuessIndex]);
+            PlaySFX(pickCardSoundName);
         }
-        else if(!secondGuess)
+        else if (!secondGuess)
         {
             secondGuess = true;
 
@@ -139,6 +151,7 @@ public class CardGameManager : MonoBehaviour
             secondGuestBackSprite = btns[secondGuessIndex].image.sprite;
 
             TurnOverPuzzle(btns[secondGuessIndex].GetComponent<RectTransform>(), btns[secondGuessIndex].image, gamePuzzles[secondGuessIndex], () => StartCoroutine(CheckPuzzles()));
+            PlaySFX(pickCardSoundName);
         }
     }
 
@@ -160,17 +173,29 @@ public class CardGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToCheck);
 
-        if(firstGuessPuzzle == secondGuessPuzzle)
+        if (firstGuessPuzzle == secondGuessPuzzle)
         {
             yield return new WaitForSeconds(0.5f);
 
             countCorrectGuesses++;
 
             if (countCorrectGuesses == gameGuesses)
+            {
+                PlaySFX(gameoverSoundName);
                 GameOver();
+            }
+            else
+            {
+                PlaySFX(correctGuessSoundName);
+            }
+                
         }
         else
         {
+            PlaySFX(wrongGuessSoundName);
+
+            PlaySFX(unPickCardSoundName);
+
             TurnOverPuzzle(btns[firstGuessIndex].GetComponent<RectTransform>(), btns[firstGuessIndex].image, firstGuestBackSprite, () => btns[firstGuessIndex].interactable = true);
             TurnOverPuzzle(btns[secondGuessIndex].GetComponent<RectTransform>(), btns[secondGuessIndex].image, secondGuestBackSprite, () => btns[secondGuessIndex].interactable = true);
         }
@@ -186,6 +211,9 @@ public class CardGameManager : MonoBehaviour
             return;
 
         isGameOver = true;
+        ICustomVariableManager vars = Engine.GetService<ICustomVariableManager>();
+        vars.TrySetVariableValue("isCardGameCompleted", true);
+        playScript.Play();
     }
 
     private void AddGamePuzzles()
@@ -217,5 +245,11 @@ public class CardGameManager : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    public async void PlaySFX(string clipName)
+    {
+        var audioManager = Engine.GetService<IAudioManager>();
+        await audioManager.PlaySfxAsync(clipName);
     }
 }

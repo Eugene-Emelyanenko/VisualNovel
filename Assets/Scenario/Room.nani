@@ -1,0 +1,21 @@
+@set currentLocation="Room"
+@hideChars
+@hidePrinter 
+@hideUI MapUI
+@resetText 
+@back room
+
+@if isItemCollected=true
+@showUI MapUI
+@else
+@showUI ItemUI
+@endif
+
+@stop
+
+# CollectItem
+@set isItemCollected=true
+@sfx ItemCollect
+@hideUI ItemUI
+@set isRoomUnlocked=false
+@goto Office

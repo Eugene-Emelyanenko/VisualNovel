@@ -1,0 +1,62 @@
+@set currentLocation="Hospital"
+@hideChars
+@hidePrinter 
+@hideUI MapUI
+@resetText 
+@back hospital
+
+@char Lucy.Smile01 look:right pos:15,0 scale:0.75,0.75
+@animate Lucy posX:25 time:1 wait:true
+
+@if isFourthQestCollected=true
+
+@char Lia.Normal01 look:right pos:85 scale:0.5,0.5
+@animate Lia posX:75
+
+@stop
+
+@endif
+
+@if isFirstQuestCollected=false
+
+Lucy.Smile02: <b>{name}</b>, you finally woke up!
+
+Me: Who are you?
+
+@char Lucy.Neutral01 look:left
+Lucy.Sad01: It's me, Lucy. We've met before... though you might not remember.
+Me: I don't. Everything feels... empty.
+
+@char Lucy.Neutral01 look:right
+Lucy.Neutral01: That makes sense. You were found unconscious near the edge of the old sector.
+
+@char Lucy.Neutral01 look:left
+Lucy.Smile01: If you want to find out who you really are — go to the <b>Office</b>. Look for a woman named <b>Lia</b>. She might help you remember.
+
+;Narrator: Quest updated: Find Lia in the Office to learn more about your past.
+
+@gosub .FirstQuestTip
+
+@set isOfficeUnlocked=true
+@set isFirstQuestCollected=true
+
+@elseif isCardGameCompleted=true
+
+Lucy.Smile02: Then don’t waste time. The room might still be untouched.
+
+@else
+
+Lucy.Smile01: If you want to find out who you really are — go to the office buiding. Look for a woman named Lia.
+@gosub .FirstQuestTip
+
+@endif
+
+@showUI MapUI
+
+@stop
+
+# FirstQuestTip
+@char Lucy.Neutral01 look:left
+Lucy.Neutral01: You can visit the <b>Office</b> using the map.
+Lucy.Smile01: Just click the <b>Map</b> button — it’s in the top-right corner of the screen.
+@return
